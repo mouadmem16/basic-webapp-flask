@@ -4,7 +4,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def main():
-    return "Welcome!"
+    hostname = os.environ["NAME"]
+    return "<h1>Welcome!</h1> </br> <h2>This is the node " + hostname + "</h2>"
 
 @app.route('/how are you')
 def hello():
