@@ -21,23 +21,21 @@ This is used in the demonstration of the development of Ansible Playbooks.
 Install Python Flask dependency
 ```bash
 pip3 install flask
-pip3 install flask-mysql
+export HOSTNAME=$machineName
 ```
 
-- Copy `app.py` or download it from a source repository
-- Configure database credentials and parameters 
 
 ## 3. Start Web Server
 
 Start web server
 ```bash
-FLASK_APP=app.py flask run --host=0.0.0.0
+sudo FLASK_APP=app.py flask run --host=0.0.0.0 --port 80
 ```
 
 ## 4. Test
 
 Open a browser and go to URL
 ```
-http://<IP>:5000                            => Welcome
-http://<IP>:5000/how%20are%20you            => I am good, how about you?
+http://<IP>:80                       => Welcome
+http://<IP>:80/healtcheck            => Json server health output 
 ```
